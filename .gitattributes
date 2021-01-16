@@ -1,5 +1,7 @@
 * text=auto
 
+package-lock.json -diff
+
 # Linguist
 src/vers/   linguist-vendored
 *.nvss      linguist-language=CSS

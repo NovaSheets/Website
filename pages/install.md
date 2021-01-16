@@ -6,10 +6,9 @@ description: Install NovaSheets using npm or from the browser
 keywords: "nixinova,novasheets,install novasheets"
 js: headings
 js2: colouring
-templateEngineOverride: njk,md
 ---
-{% set version %}{% include "templates/version.txt" %}{% endset -%}
-{% set domain %}https://novasheets.nixinova.com{% endset -%}
+{% capture version %}{% include templates/version.txt %}{% endcapture -%}
+{% capture domain %}https://novasheets.nixinova.com{% endcapture -%}
 
 # Installing NovaSheets
 

@@ -3,7 +3,7 @@
     "scripts": {
         "build": "eleventy --pathprefix 'website'",
         "serve": "eleventy --serve"
-      },
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/NovaSheets/website.git"
