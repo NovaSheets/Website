@@ -1,57 +1,8 @@
-[![Latest version](https://img.shields.io/github/v/release/Nixinova/NovaSheets?label=latest%20version&style=flat-square)](https://github.com/Nixinova/NovaSheets/releases)
-[![Last updated](https://img.shields.io/github/release-date/Nixinova/NovaSheets?label=updated&style=flat-square)](https://github.com/Nixinova/NovaSheets/releases)
-[![npm downloads](https://img.shields.io/npm/dt/novasheets?logo=npm)](https://www.npmjs.com/package/novasheets)
+![NovaSheets](/assets/images/logo.png)
 
-# NovaSheets
+This repository contains the source code of the [NovaSheets](https://github.com/NovaSheets/NovaSheets) website.
 
-A lightweight CSS preprocessor that is simple but powerful.
+- Content pages are stored in the [`pages`](/pages) folder.
+- Assets, including templates, are stored in the [`assets`](/assets) folder.
 
-**[View documentation](https://novasheets.nixinova.com/docs/)**
-
-NovaSheets is a powerful CSS preprocessor with the ability to easily create intricate CSS files with simple syntax. NovaSheets has very simple, versatile syntax that is easy to pick up and use as it builds largely off of CSS itself, with the addition of custom variables which act as functions, templates, and mixins all in one. With many built-in variables for you to use, you can take your stylesheets to the next level. NovaSheets parses in plain text which means you do not have to worry about type conversions or escaping, giving you complete power over your stylesheets.
-
-## Installation
-
-Download [NovaSheets on npm](https://www.npmjs.com/package/novasheets) using `npm install -g novasheets` for command-line usage or `npm install novasheets` for local usage.
-
-For browser usage, see the [releases](https://github.com/Nixinova/NovaSheets/releases) page of this repository to choose a version to use. Simply import the script into your HTML document and any embedded NovaSheets stylesheets will be parsed.
-
-## Node usage
-```js
-const { parse, compile } = require('novasheets');
-parse('@var color = #a1f @endvar $(@shade | $(color) | 50% )'); // "#55087f"
-compile('stylesheet.nss', 'output.css');
-```
-
-## Syntax
-
-NovaSheets lets you declare [variables](https://novasheets.nixinova.com/docs/variables/) (with optional parameters) and reuse these elsewhere in the document.
-NovaSheets comes with a large variety of [built-in variables](https://novasheets.nixinova.com/docs/default-variables/) for you to make use of, making your CSS development a lot easier.
-For full documentation, see [the NovaSheets website](https://novasheets.nixinova.com/docs/).
-For testing NovaSheets syntax, see [the demo page](https://novasheets.nixinova.com/demo/).
-
-### Example
-
-**Input**:
-
-```
-@var margin = 1em
-@var shaded
-    background: $[bgcolor];
-    color: $(@color | hex | 50% | 20% | 30%);
-@endvar
-.default {text-align: center; color: #eee;}
-div.main {$<.default>!; margin: $(margin);}
-div.shaded {margin: $<div.main><margin> + 1em; $(shaded | bgcolor=blue)}
-```
-
-**Output**:
-
-```css
-.default {text-align: center; color: #eee;}
-div.main {text-align: center; color: #eee; margin: 1em;}
-div.shaded {margin: 2em; background: blue; color: #80334d;}
-```
-
-## VSCode extension
-A VSCode extension for NovaSheets syntax highlighting is available in the [VSCode Marketplace](https://marketplace.visualstudio.com/items/Nixinova.novasheets) via repository [NovaSheets-vscode](https://github.com/Nixinova/NovaSheets-vscode). This extension works for files with extensions `.nss`, `.nss.txt`, `.novasheet` and `.novasheets`.
+If you find an issue with any page, please [create a new issue](https://github.com/Nixinova/News/issues/new).

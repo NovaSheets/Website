@@ -61,13 +61,13 @@ $(code|.css-char) {$(code color | 200 | 30%)}
 $(code|.html-tag) {$(code color | 200)}
 $(code|.html-attr-name) {$(code color | 180)}
 $(code|.html-attr-val) {$(code color | 35)}
-$(code|.nss-char) {$(code color | 200)}
-$(code|.nss-selector) {$(code color | 70)}
-$(code|.nss-var) {$(code color | 160)}
-$(code|.nss-var-param) {$(code color | 280 | 60%)}
-$(code|.nss-var-arg) {color: #fff;}
-$(code|.nss-arg) {$(code color | 280 | 60%)}
-$(code|.nss-arg-default) {$(code color | 330)}
+$(code|.nvss-char) {$(code color | 200)}
+$(code|.nvss-selector) {$(code color | 70)}
+$(code|.nvss-var) {$(code color | 160)}
+$(code|.nvss-var-param) {$(code color | 280 | 60%)}
+$(code|.nvss-var-arg) {color: #fff;}
+$(code|.nvss-arg) {$(code color | 280 | 60%)}
+$(code|.nvss-arg-default) {$(code color | 330)}
 $(code|.js-keyword) {$(code color | 200)}
 $(code|.js-class) {$(code color | 50)}
 $(code|.js-function) {$(code color | 50 | 70%)}

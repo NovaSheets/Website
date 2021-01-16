@@ -6,7 +6,7 @@ js: colouring
 ---
 # NovaSheets Parser Constants
 
-```nss
+```nvss
 @const <name> <value>
 ```
 

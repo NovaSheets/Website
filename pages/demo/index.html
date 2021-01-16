@@ -1,8 +1,11 @@
+---
+permalink: /demo/
+---
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>NovaSheets Testing</title>
+    <title>NovaSheets Demo</title>
     <style data-keep="true">
         h1, h2 {text-align: center; font-family: sans-serif;}
         button {width: 30%; margin: 1px auto; border: 1px solid #222; font-size: 1.1em;}
@@ -20,28 +23,31 @@
         .property {color: #095d98;}
         .value {color: #b74401;}
     </style>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="icon" href="/assets/favicon.ico">
     <script src="../src/novasheets.js"></script>
     <script src="/assets/js/colouring.js"></script>
-    <link id="import" rel="!novasheet" href="example.nss">
+    <link id="import" rel="!novasheet" href="example.nvss">
     <script>
+        const $ = x => document.querySelector(x), $$ = x => document.querySelectorAll(x);
         window.useDefault = false;
         function parseInput() {
-            $('style:not([data-keep])').remove();
-            let cssContent = $('#input').val();
+            $$('style:not([data-keep])').forEach(item => item.remove());
+            let cssContent = $('#input').value;
             let parsedContent = parseNovaSheets(cssContent);
-            $('#output').html(parsedContent.replace(/}(?!\s*$)/g, '}\n'));
+            $('#output').innerHTML = parsedContent.replace(/}(?!\s*$)/g, '}\n');
             parseNovaSheets();
         }
         function toggleDefault() {
             useDefault = !useDefault;
             document.getElementById('use-default').innerHTML = useDefault;
-            $('#import').attr('rel', $('#import').attr('rel') === 'novasheet' ? '!novasheet' : 'novasheet');
+            $('#import').setAttribute('rel', $('#import').getAttribute('rel') === 'novasheet' ? '!' : '' + 'novasheet');
             parseInput();
         }
         document.addEventListener("DOMContentLoaded", function () {
-            $('#input').html($('#input').html().replace(/^\s*/gm,'').replace(/^\s*\n/, ''));
+            let cleanInput = $('#input').innerHTML
+            .replace(/^\s*/gm,'')
+            .replace(/^\s*\n/, '')
+            $('#input').innerHTML = cleanInput;
             parseInput();
         });
     </script>

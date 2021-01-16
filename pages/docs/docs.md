@@ -7,17 +7,26 @@ js: colouring
 js2: headings
 ---
 # NovaSheets Documentation
-- [Node usage](#node-usage)
-- [Command-line usage](#command-line-usage)
-- [Browser usage](#browser-usage)
-- [Syntax](#syntax)
+- [NovaSheets Documentation](#novasheets-documentation)
+  - [Node usage](#node-usage)
+  - [Command-line usage](#command-line-usage)
+  - [Browser usage](#browser-usage)
+    - [Importing](#importing)
+    - [Embedding](#embedding)
+  - [Syntax](#syntax)
+    - [Variables](#variables)
+    - [Operators](#operators)
+    - [Selectors](#selectors)
+    - [Objects](#objects)
+    - [Comments](#comments)
+    - [Parser constants](#parser-constants)
 
 ## Node usage
 
 <pre class="code-styles">
 <span class="js-keyword">const</span> { <span class="js-function">parse</span>, <span class="js-function">compile</span> } = <span class="js-function">require</span>(<span class="js-string">'novasheets'</span>);
 <span class="js-function">parse</span>(<span class="js-string">'@var color = #fff @endvar $(@shade | $(color) | 50% )'</span>); <span class="comment">// "#7f7f7f"</span>
-<span class="js-function">compile</span>(<span class="js-string">'stylesheet.nss'</span>, <span class="js-string">'output.css'</span>);
+<span class="js-function">compile</span>(<span class="js-string">'stylesheet.nvss'</span>, <span class="js-string">'output.css'</span>);
 </pre>
 
 NovaSheets contains two functions, `parse` and `compile`. After installing NovaSheets using `npm install novasheets`, import these using `const { parse, compile } = require('novasheets');`.
@@ -44,21 +53,21 @@ After the NovaSheets source code is added to the web page, stylesheets can be ei
 
 Simply link to external NovaSheets files in the header of the page using `<link>` tags with the `rel` attribute set to `"novasheet"` (or `"novasheets"`).
 
-```
-<link rel="novasheet" href="example.nss">
+```html
+<link rel="novasheet" href="example.nvss">
 ```
 
 ### Embedding
 
 Inline stylesheets can be created by simply setting the `type` attribute of an element to `"novasheet"` (or `"novasheets"`) and putting NovaSheets content inside. Note that HTML may interfere with NovaSheet styles if they are placed inside regular block elements, so `<style>` or `<script>` tags are recommended. When using `<script>` tags, surround the entire stylesheet content in backticks (\`) to avoid JavaScript errors in the console.
 
-```
+```html
 <style type="novasheets">
     .element {display: inline-block;}
     % .child {font-size: 2/3em;}
 </style>
 ```
-```
+```html
 <script type="novasheets">`
     div {background-color: brown;}
     & p, & img {border: 2px solid;}

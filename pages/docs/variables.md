@@ -8,11 +8,11 @@ js: colouring
 
 ## Declaring
 - Single-line:
-  ```nss
+  ```nvss
   @var <name> = <contents>
   ```
 - Multi-line:
-  ```nss
+  ```nvss
   @var <name>
     <contents>
   [@endvar]
@@ -24,11 +24,11 @@ Variables can have any name; the only limitations are that they cannot contain p
 The contents of a variable are found either on the lines beneath it, all the way up until either another variable declaration or the keyword `@endvar`, or as the content to the right of the first equals sign on the declaration line.
 
 Variables are always hoisted; that is, they are evaluated before all other content, making the following equivalent:
-```nss
+```nvss
 @var variable = content
 $(variable) // "content"
 ```
-```nss
+```nvss
 $(variable) // "content"
 @var variable = content
 ```
@@ -36,11 +36,11 @@ $(variable) // "content"
 ## Substitution
 ### Variables
 - Explicit arguments:
-  ```nss
+  ```nvss
   $( <name> | <parameter1> = <argument1> | <parameter2> = <argument2> | ... )
   ```
 - Anomymous arguments (where the parameter defaults to the index of the argument, i.e. `1`, `2`, ...):
-  ```nss
+  ```nvss
   $( <name> | <argument1> | <argument2> | ... )
   ```
 
@@ -49,22 +49,22 @@ Arguments are passed by listing parameter names followed by the argument content
 
 ### Parameters
 - Named parameter:
-  ```nss
+  ```nvss
   $[ <parameter> ]
   ```
 - Anonymous parameter:
-  ```nss
+  ```nvss
   $[ <index> ]
   ```
 - With default content:
-  ```nss
+  ```nvss
   $[ <parameter> | <default content> ]
   ```
 Parameters of a variable are referenced similar to variables but by using square brackets instead of parentheses (`$[...]`). The default contents of an argument can be set by adding a pipe following by the default argument content to its name. Numerical parameter names can refer to the index of a variable calling the anonymous parameter with that index. For instance, `$(var|1=text)` (with explicit parameter "1") is equivalent to `$(var|text)` (with one anonymous parameter).
 
 ## Examples
 
-```nss
+```nvss
 /* Declare variables */
 // declare variable 'color1' with contents '#123':
 @var color1 = #123

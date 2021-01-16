@@ -1,32 +1,18 @@
 {
-    "name": "novasheets",
-    "version": "0.6.6",
-    "description": "A simple, powerful, and versatile CSS preprocessor",
-    "keywords": [
-        "novasheets",
-        "nss",
-        "css",
-        "css preprocessor",
-        "preprocessor",
-        "parser"
-    ],
-    "files": [
-        "src/novasheets.js"
-    ],
-    "main": "src/novasheets.js",
-    "bin": {
-        "novasheets": "src/novasheets.js"
-    },
+    "description": "Documentation for NovaSheets, the simple and powerful CSS preprocessor",
+    "scripts": {
+        "build": "eleventy --pathprefix 'website'",
+        "serve": "eleventy --serve"
+      },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Nixinova/NovaSheets.git"
+        "url": "git+https://github.com/NovaSheets/website.git"
     },
     "author": "Nixinova (https://nixinova.com)",
     "bugs": {
-        "url": "https://github.com/Nixinova/NovaSheets/issues"
+        "url": "https://github.com/NovaSheets/website/issues"
     },
     "homepage": "https://novasheets.nixinova.com",
-    "license": "MIT",
     "devDependencies": {
         "@11ty/eleventy": "^0.11.1"
     }

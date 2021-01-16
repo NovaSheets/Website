@@ -12,7 +12,7 @@
     {% set date %}{{ item.slice(6, 16) }}{% endset %}
     {% set docs %}{{ item.slice(17, 21) }}{% endset %}
     {% set hash %}{{ item.slice(22) }}{% endset %}
-    {% set repo = "https://github.com/Nixinova/NovaSheets" %}
+    {% set repo = "https://github.com/NovaSheets/NovaSheets" %}
     <tr  {% if ver.slice(-1) == 0 %} style="background: #1114;" {% endif %}>
         <td>{{ver}}</td>
         <td>{{date}}</td>
@@ -26,12 +26,10 @@
                 }}.md">Browse</a>
             {% elif docs == "wiki" %}
                 <a href="{{repo}}/wiki/Syntax/{{hash}}">Wiki</a>
-            {% elif docs == "docs" %}
-                <a href="/docs/">Docs</a>
-            {% elif docs == "cmit" %}
-                <a href="{{repo}}/tree/{{hash}}/pages/docs">Browse</a>
-            {% elif docs == "ldoc" %}
+            {% elif docs == "gtag" %}
                 <a href="{{repo}}/tree/{{ver}}/pages/docs">Browse</a>
+            {% elif docs == "docs" %}
+                <a href="/docs/">Site</a>
             {% endif %}
         </td>
     </tr>

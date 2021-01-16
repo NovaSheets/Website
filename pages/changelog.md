@@ -1,5 +1,8 @@
 ---
-{title: Changelog, layout: layouts/base.njk, js: colouring}
+layout: layouts/base.njk
+title: Changelog
+permalink: /changelog/
+js: colouring
 ---
 # Changelog for NovaSheets
 - [0.6.0](#060) • [0.6.1](#061) • [0.6.2](#062) • [0.6.3](#063) • [0.6.4](#064) • [0.6.5](#065) • [0.6.6](#066)

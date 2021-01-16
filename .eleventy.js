@@ -1,13 +1,20 @@
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("assets");
-    eleventyConfig.addPassthroughCopy("src");
-    eleventyConfig.addPassthroughCopy("demo");
+
+    eleventyConfig.addPassthroughCopy("assets/");
+    eleventyConfig.addPassthroughCopy("src/");
+    eleventyConfig.addPassthroughCopy("pages/demo/");
+
+    eleventyConfig.addPassthroughCopy("CNAME");
+    eleventyConfig.addPassthroughCopy("_redirects");
+
     eleventyConfig.addWatchTarget("assets");
-    eleventyConfig.addWatchTarget("demo");
+    eleventyConfig.addWatchTarget("pages");
+
     return {
         passthroughFileCopy: true,
         dir: {
             includes: "assets/includes"
         }
     };
+    
 }

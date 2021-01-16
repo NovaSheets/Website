@@ -6,7 +6,7 @@ js: colouring
 ---
 # NovaSheets Comments
 
-```nss
+```nvss
 // Single-line comment
 /* Multi-line comment */
 /*/ Static comment /*/

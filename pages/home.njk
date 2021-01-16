@@ -2,10 +2,10 @@
 layout: layouts/base.njk
 permalink: /
 title: Home
-description: "The official website of NovaSheets"
-keywords: "nixinova,novasheets"
-nss: "home"
-js: "colouring"
+description: The official website of NovaSheets, the simple and powerful CSS preprocessor. Install on npm for Node or the command line, or import on a website.
+keywords: nixinova, novasheets, novasheets website
+nvss: home
+js: colouring
 ---
 
 <div id="showcase">
@@ -13,7 +13,7 @@ js: "colouring"
         <div class="item-container main-container">
             <div class="item">
                 <h1>NovaSheets</h1>
-                <p>A lightweight CSS preprocessor that is simple but powerful.</p>
+                <p>A simple but powerful CSS preprocessor.</p>
                 <p id="welcome-install" class="item-link" style="padding-bottom: 0;">
                     <a href="/install/">Install now</a>
                     <pre>npm install -g novasheets</pre>
@@ -25,7 +25,7 @@ js: "colouring"
         <div class="item-container">
             <div class="item">
                 <h2>What is NovaSheets?</h2>
-                <p>NovaSheets is a powerful CSS preprocessor with the ability to easily create intricate CSS files with simple syntax. With many built-in variables for you to use, you can take your stylesheets to the next level.</p>
+                <p>NovaSheets is a powerful CSS preprocessor with the ability to easily create intricate CSS files with simple syntax. With many built-in functions for you to use, you can take your stylesheets to the next level.</p>
             </div>
         </div>
     </div>
@@ -40,27 +40,9 @@ js: "colouring"
             </div>
             <div class="item">
                 <pre>
-                    <code class="language-nss">
+                    <code class="language-nvss">
                         @var color = hsl($[hue|300], 75%, 80%)\n
                         body {background: $(color|hue=200);}
-                    </code>
-                </pre>
-            </div>
-        </div>
-    </div>
-    <div class="section-container">
-        <div class="item-container">
-            <div class="item">
-                <h2>Lightweight</h2>
-                <p>With one import, gain access to the full parsing power.</p>
-                <p class="item-link">
-                    <a href="/versions/">View downloads</a>
-                </p>
-            </div>
-            <div class="item">
-                <pre>
-                    <code class="language-nss">
-                        &lt;script src="novasheets.js"&gt;&lt;/script&gt;
                     </code>
                 </pre>
             </div>
@@ -77,7 +59,7 @@ js: "colouring"
             </div>
             <div class="item">
                 <pre>
-                    <code class="language-nss">
+                    <code class="language-nvss">
                         $(@darken | hsl(100, 20%, 30%) | 30% )\n
                         $(@breakpoint | 800px | .container | width: 100%; | width: 30vw; )
                     </code>
@@ -96,10 +78,28 @@ js: "colouring"
             </div>
             <div class="item">
                 <pre>
-                    <code class="language-nss">
+                    <code class="language-nvss">
                         $(@each | .item1, .item2, .item3 | $v &gt; $v[$i-1] ) {\n
                         &nbsp; display: flex;\n
                         }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="section-container">
+        <div class="item-container">
+            <div class="item">
+                <h2>Lightweight</h2>
+                <p>With one import, gain access to the full parsing power.</p>
+                <p class="item-link">
+                    <a href="/versions/">View downloads</a>
+                </p>
+            </div>
+            <div class="item">
+                <pre>
+                    <code class="language-nvss">
+                        &lt;script src="novasheets.js"&gt;&lt;/script&gt;
                     </code>
                 </pre>
             </div>

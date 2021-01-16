@@ -1,0 +1,5 @@
+* text=auto
+
+# Linguist
+src/vers/   linguist-vendored
+*.nvss      linguist-language=CSS

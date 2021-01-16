@@ -22,28 +22,28 @@ function colouriseCode() {
             .replace(/(?<!(?:\/\/|\/\*).*)[^\/|{}():;\n]+?(?=:(?!\/))/gm, wrap('$&', 'css-property')) // property
             .replace(/(?<!(?:\/\/|\/\*).*)(?<=:\s*)[^\/|{}:;\n]+?(?=;)/gm, wrap('$&', 'css-value')) // value
 
-            // NSS declarations
-            .replace(/^\s*(@var)\s*(.+?)(?==.*$|$)/gm, wrap('$1', 'nss-char') + wrap(' $2', 'nss-var')) // var decl
-            .replace(/(?<!(?:\/\/|\/\*).*)\$\[([^<]*?)(?:(\|)(.*?))?\]/gm, wrap('$[', 'nss-char') + wrap('$1', 'nss-arg') + wrap('$2', 'nss-char') + wrap('$3', 'nss-arg-default') + wrap(']', 'nss-char')) // param decl
-            .replace(/@endvar/g, wrap('$&', 'nss-char')) // endvar
-            .replace(/(@const)\s+(\S*)\s+(\S*)?/gi, wrap('$1', 'nss-char') + wrap(' $2', 'nss-var') + wrap(' $3', 'nss-arg')) // const
+            // NovaSheets declarations
+            .replace(/^\s*(@var)\s*(.+?)(?==.*$|$)/gm, wrap('$1', 'nvss-char') + wrap(' $2', 'nvss-var')) // var decl
+            .replace(/(?<!(?:\/\/|\/\*).*)\$\[([^<]*?)(?:(\|)(.*?))?\]/gm, wrap('$[', 'nvss-char') + wrap('$1', 'nvss-arg') + wrap('$2', 'nvss-char') + wrap('$3', 'nvss-arg-default') + wrap(']', 'nvss-char')) // param decl
+            .replace(/@endvar/g, wrap('$&', 'nvss-char')) // endvar
+            .replace(/(@const)\s+(\S*)\s+(\S*)?/gi, wrap('$1', 'nvss-char') + wrap(' $2', 'nvss-var') + wrap(' $3', 'nvss-arg')) // const
 
-            // NSS substitutions
-            .replace(/(?<!(?:\/\/|\/\*).*)\$\(([^<]*?)(\|.*)?\)/gm, wrap('$(', 'nss-char') + wrap('$1', 'nss-var') + '$2' + wrap(')', 'nss-char')) // var subst
-            .replace(/\|([^<]*?)=([^|]*?)/gm, wrap('|', 'nss-char') + wrap('$1', 'nss-var-param') + wrap('=', 'nss-char') + wrap('$2', 'nss-var-arg')) // arg decl
-            .replace(/\$(↑lt↓)([\w.:+~>()]+)(↑gt↓)/g, wrap('$<', 'nss-char') + wrap('$2', 'css-selector') + wrap('>', 'nss-char')) // decl block subst
-            .replace(/(↑lt↓)(\w*?)(↑gt↓)/g, wrap('$1', 'nss-char') + wrap('$2', 'css-property') + wrap('$3', 'nss-char')) // obj getter
-            .replace(/!/g, wrap('$&', 'nss-char')) // obj subster
+            // NovaSheets substitutions
+            .replace(/(?<!(?:\/\/|\/\*).*)\$\(([^<]*?)(\|.*)?\)/gm, wrap('$(', 'nvss-char') + wrap('$1', 'nvss-var') + '$2' + wrap(')', 'nvss-char')) // var subst
+            .replace(/\|([^<]*?)=([^|]*?)/gm, wrap('|', 'nvss-char') + wrap('$1', 'nvss-var-param') + wrap('=', 'nvss-char') + wrap('$2', 'nvss-var-arg')) // arg decl
+            .replace(/\$(↑lt↓)([\w.:+~>()]+)(↑gt↓)/g, wrap('$<', 'nvss-char') + wrap('$2', 'css-selector') + wrap('>', 'nvss-char')) // decl block subst
+            .replace(/(↑lt↓)(\w*?)(↑gt↓)/g, wrap('$1', 'nvss-char') + wrap('$2', 'css-property') + wrap('$3', 'nvss-char')) // obj getter
+            .replace(/!/g, wrap('$&', 'nvss-char')) // obj subster
 
-            // NSS other
-            .replace(/\$v|\$i/g, wrap('$&', 'nss-var')) // $v, $i
-            .replace(/↑amp↓(↑lt↓)*|%(↑lt↓)*/g, wrap('$&', 'nss-selector')) // prev selectors
-            .replace(/[|]/g, wrap('$&', 'nss-char'))
+            // NovaSheets other
+            .replace(/\$v|\$i/g, wrap('$&', 'nvss-var')) // $v, $i
+            .replace(/↑amp↓(↑lt↓)*|%(↑lt↓)*/g, wrap('$&', 'nvss-selector')) // prev selectors
+            .replace(/[|]/g, wrap('$&', 'nvss-char'))
 
             // HTML
             .replace(/(↑lt↓\/?)(\w+)(↑gt↓)?/gm, wrap('$&', 'html-tag'))
             .replace(/([\w-]+)=(".*?")(↑gt↓)?/gm, wrap('$1', 'html-attr-name') + '=' + wrap('$2', 'html-attr-val') + wrap('$3', 'html-tag'))
-            //.replace(/(?<!(?:\/\/|\/\*).*)(\||\$|\(|\)|\[|\])/g, wrap('$&', 'nss-char'))
+            //.replace(/(?<!(?:\/\/|\/\*).*)(\||\$|\(|\)|\[|\])/g, wrap('$&', 'nvss-char'))
             .replace(/[{}]/g, wrap('$&', 'css-char')) // brackets
 
             // HTML re-fixing

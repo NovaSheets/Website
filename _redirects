@@ -1,7 +1,7 @@
----
-permalink: _redirects
----
+/*                              /pages/:splat                       200
+
 /docs/variables/default/        /docs/default-variables/
+
 /src/latest                     /src/novasheets.js
 /src/stable                     /src/vers/novasheets-0.6.6.js
 /src/stable/min                 /src/vers/novasheets-0.6.6.min.js
