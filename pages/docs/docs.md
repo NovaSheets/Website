@@ -1,5 +1,5 @@
 ---
-layout: layouts/docs.njk
+layout: docs
 permalink: /docs/
 title: Documentation
 description: "Documentation for NovaSheets syntax"

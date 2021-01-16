@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: base
 title: Changelog
 permalink: /changelog/
 js: colouring

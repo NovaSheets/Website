@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-NZ">
     <head>
-        {% include "components/head.html" %}
+        {% include components/head.html %}
         {% if nvss %}<link rel="novasheet" href="/assets/css/{{nvss}}.nvss">{% endif %}
         {% if js %}<script src="/assets/js/{{js}}.js"></script>{% endif -%}
         {% if js2 %}<script src="/assets/js/{{js2}}.js"></script>{% endif -%}
@@ -10,8 +10,8 @@
     </head>
 
     <body>
-        <header>{% include "components/header.njk" %}</header>
+        <header>{% include components/header %}</header>
         <main>{{ content | safe }}</main>
-        <footer>{% include "components/footer.html" %}</footer>
+        <footer>{% include components/footer.html %}</footer>
     </body>
 </html>

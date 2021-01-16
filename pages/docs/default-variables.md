@@ -1,5 +1,5 @@
 ---
-layout: layouts/docs.njk
+layout: docs
 permalink: /docs/default-variables/
 title: Default Variables
 js: headings

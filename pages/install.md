@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: base
 permalink: /install/
 title: Install
 description: Install NovaSheets using npm or from the browser

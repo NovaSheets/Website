@@ -1,5 +1,5 @@
 ---
-layout: layouts/docs.njk
+layout: docs
 permalink: /docs/selectors/
 title: Selectors
 js: colouring
