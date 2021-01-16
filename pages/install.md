@@ -7,8 +7,6 @@ keywords: "nixinova,novasheets,install novasheets"
 js: headings
 js2: colouring
 ---
-{% capture version %}{% include templates/version.txt %}{% endcapture -%}
-{% capture domain %}https://novasheets.nixinova.com{% endcapture -%}
 
 # Installing NovaSheets
 
@@ -29,33 +27,33 @@ Once you have done this, you can download one of the files given and add them to
 ### Importing
 The latest version is <strong>{{version}}</strong> and can be imported using the code below:
 ```html
-<script src="{{domain}}/src/{{version}}/min"></script>
+<script src="https://novasheets.nixinova.com/src/{{version}}/min"></script>
 ```
 
 While the minified version above is recommended for general use, you can also choose to use the more verbose regular version, which includes comments and indentation:
 ```html
-<script src="{{domain}}/src/{{version}}"></script>
+<script src="https://novasheets.nixinova.com/src/{{version}}"></script>
 ```
 
 #### Wildcards
 
 Additionally, you can choose to use a wildcard version, where you will always receive the latest patch:
 ```html
-<script src="{{domain}}/src/{{version | replace(r/\.\d+$/, '.x')}}"></script>
-<script src="{{domain}}/src/{{version | replace(r/\.\d+$/, '.x')}}/min"></script>
+<script src="https://novasheets.nixinova.com/src/{{version | replace(r/\.\d+$/, '.x')}}"></script>
+<script src="https://novasheets.nixinova.com/src/{{version | replace(r/\.\d+$/, '.x')}}/min"></script>
 ```
 
 #### Latest
 
 You can choose to always import the latest stable version of NovaSheets using the code below, but be warned it may contain breaking changes in an update:
 ```html
-<script src="{{domain}}/src/stable"></script>
-<script src="{{domain}}/src/stable/min"></script>
+<script src="https://novasheets.nixinova.com/src/stable"></script>
+<script src="https://novasheets.nixinova.com/src/stable/min"></script>
 ```
 
 Alternatively, you can choose to import the main live source code directly, but be warned that it is continually updated and may contain incomplete or buggy features, so use it at your own risk:
 ```html
-<script src="{{domain}}/src/latest"></script>
+<script src="https://novasheets.nixinova.com/src/latest"></script>
 ```
 
 ### Browser support

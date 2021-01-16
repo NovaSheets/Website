@@ -13,7 +13,8 @@ module.exports = function (eleventyConfig) {
     return {
         passthroughFileCopy: true,
         dir: {
-            includes: "assets/includes"
+            includes: "assets/includes",
+            data: "assets/data"
         }
     };
     
