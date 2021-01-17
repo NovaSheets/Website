@@ -15,6 +15,7 @@ js: colouring
 ## 0.6.7
 *2021-01-17*
 - **Additions**
+  - Added glob support to the `--compile` command.
   - Added console messages for successfully compiled files.
 - **Changes**
   - Changed simple breakpoint maximums to be exclusive, allowing the same number to be used in two separate selectors without clashes.
