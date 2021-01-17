@@ -40,7 +40,7 @@ js: colouring
             </div>
             <div class="item">
                 <pre>
-                    <code class="language-nvss">
+                    <code>
                         @var color = hsl($[hue|300], 75%, 80%)\n
                         body {background: $(color|hue=200);}
                     </code>
@@ -59,7 +59,7 @@ js: colouring
             </div>
             <div class="item">
                 <pre>
-                    <code class="language-nvss">
+                    <code>
                         $(@darken | hsl(100, 20%, 30%) | 30% )\n
                         $(@breakpoint | 800px | .container | width: 100%; | width: 30vw; )
                     </code>
@@ -71,17 +71,16 @@ js: colouring
         <div class="item-container">
             <div class="item">
                 <h2>Versatile</h2>
-                <p>Peform powerful variable interpolation.</p>
+                <p>Use in the browser, in Node, or on the command line.</p>
                 <p class="item-link">
-                    <a href="/docs/variables/">See how</a>
+                    <a href="/docs/">See how</a>
                 </p>
             </div>
             <div class="item">
                 <pre>
-                    <code class="language-nvss">
-                        $(@each | .item1, .item2, .item3 | $v &gt; $v[$i-1] ) {\n
-                        &nbsp; display: flex;\n
-                        }
+                    <code>
+                        parse('@var foo = bar:1; @endvar $(foo)') // node<br>
+                        novasheets --compile **/*.nvss css/ // CLI
                     </code>
                 </pre>
             </div>
@@ -98,8 +97,9 @@ js: colouring
             </div>
             <div class="item">
                 <pre>
-                    <code class="language-nvss">
-                        &lt;script src="novasheets.js"&gt;&lt;/script&gt;
+                    <code>
+                        npm install -g novasheets // node<br>
+                        &lt;script src="novasheets.js"&gt;&lt;/script&gt; // browser
                     </code>
                 </pre>
             </div>

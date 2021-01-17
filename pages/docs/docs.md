@@ -6,50 +6,71 @@ description: "Documentation for NovaSheets syntax"
 js: colouring
 js2: headings
 ---
-# NovaSheets Documentation
-- [NovaSheets Documentation](#novasheets-documentation)
-  - [Node usage](#node-usage)
-  - [Command-line usage](#command-line-usage)
-  - [Browser usage](#browser-usage)
+# NovaSheets Documentation <!-- omit in toc -->
+
+<div id="toc"></div>
+
+- [Usage](#usage)
+  - [Node](#node)
+    - [Command-line](#command-line)
+    - [Commands](#commands)
+  - [Browser](#browser)
     - [Importing](#importing)
     - [Embedding](#embedding)
-  - [Syntax](#syntax)
-    - [Variables](#variables)
-    - [Operators](#operators)
-    - [Selectors](#selectors)
-    - [Objects](#objects)
-    - [Comments](#comments)
-    - [Parser constants](#parser-constants)
+- [Syntax](#syntax)
+  - [Variables](#variables)
+  - [Operators](#operators)
+  - [Selectors](#selectors)
+  - [Objects](#objects)
+  - [Comments](#comments)
+  - [Parser constants](#parser-constants)
 
-## Node usage
+## Usage
+
+### Node
 
 <pre class="code-styles">
 <span class="js-keyword">const</span> { <span class="js-function">parse</span>, <span class="js-function">compile</span> } = <span class="js-function">require</span>(<span class="js-string">'novasheets'</span>);
 <span class="js-function">parse</span>(<span class="js-string">'@var color = #fff @endvar $(@shade | $(color) | 50% )'</span>); <span class="comment">// "#7f7f7f"</span>
-<span class="js-function">compile</span>(<span class="js-string">'stylesheet.nvss'</span>, <span class="js-string">'output.css'</span>);
+<span class="js-function">compile</span>(<span class="js-string">'stylesheet.nvss'</span>, <span class="js-string">'output.css'</span>); <span class="comment">// void</span>
 </pre>
 
-NovaSheets contains two functions, `parse` and `compile`. After installing NovaSheets using `npm install novasheets`, import these using `const { parse, compile } = require('novasheets');`.
+NovaSheets contains two functions, `parse` and `compile`.
+After installing NovaSheets using `npm install novasheets`, import these using `const { parse, compile } = require('novasheets');`.
+See [Commands](#commands) for usage.
 
-The `parse` function returns the parsed NovaSheets content, given via its first argument.
-The `compile` function compiles a NovaSheets file into CSS. It takes two arguments, the input file and the output file. If the output file is not set, it defaults to the input file but with a file extension of `.css`.
+#### Command-line
 
-## Command-line usage
+The command-line mode of NovaSheets gives you four console commands: `--parse`, `--compile`, `--help`, and `--version`.
+The latter two are meta-commands. When installed globally, run commands using `novasheets ...`; when installed locally, use `npx novasheets ...`.
 
-After installing globally using `npm install -g novasheets`:
+#### Commands
 
-```
-novasheets <input file> [<output file>]   Compile a NovaSheets file into CSS
-novasheets --parse "<input>"              Parse raw NovaSheets input from the command line
-novasheets --help                         Display the help message
-novasheets --version                      Display the current version of NovaSheets
-```
+- Node: `parse(input)`<br>
+  CLI: `novasheets (-p|--parse) <input>`
+  - Parses the NovaSheets code given as its input and returns the parsed CSS content as a string.
+  - Example:<br>
+    &emsp;Node: `parse("@var foo = bar=$[baz] @endvar $(foo|baz=qux)")`<br>
+    &emsp;CLI: `novasheets -p "@var foo = bar=$[baz] @endvar $(foo|baz=qux)"`
+    - Returns string `bar=qux`.
+- Node: `compile(<input>, [<output>])`<br>
+  CLI: `novasheets [(-c|--compile)] <input> [<output>]`
+  - Compiles the files matching the input [glob](https://www.npmjs.com/package/glob#glob-primer) into the output. 
+    If the output is not set, or it is a folder path (ending with `/`), the input filename (replaced with a `.css` extension) is used. Has no return value but logs console messages for each successful compilation.
+  - Example:<br>
+    &emsp;Node: `compile('css/*.nvss', '_site/css/')`<br>
+    &emsp;CLI: `novasheets -c css/*.nvss _site/css/`
+    - Compiles the NovaSheets syntax of all `.nvss` files in the `css` folder and places the outputted files (all now with extension `.css`) in the `_site/css` folder.
+- CLI only: `novasheets (-h|--help)`
+  - Displays a help message showing all commands.
+- CLI only: `novasheets (-v|--version)`
+  - Outputs the latest version of NovaSheets ({{version}}).
 
-## Browser usage
+### Browser
 
-After the NovaSheets source code is added to the web page, stylesheets can be either be imported from external files or embedded locally.
+After the NovaSheets source code is added to the web page (see [Install](/install/)), stylesheets can be either be imported from external files or embedded locally.
 
-### Importing
+#### Importing
 
 Simply link to external NovaSheets files in the header of the page using `<link>` tags with the `rel` attribute set to `"novasheet"` (or `"novasheets"`).
 
@@ -57,7 +78,7 @@ Simply link to external NovaSheets files in the header of the page using `<link>
 <link rel="novasheet" href="example.nvss">
 ```
 
-### Embedding
+#### Embedding
 
 Inline stylesheets can be created by simply setting the `type` attribute of an element to `"novasheet"` (or `"novasheets"`) and putting NovaSheets content inside. Note that HTML may interfere with NovaSheet styles if they are placed inside regular block elements, so `<style>` or `<script>` tags are recommended. When using `<script>` tags, surround the entire stylesheet content in backticks (\`) to avoid JavaScript errors in the console.
 
@@ -108,4 +129,5 @@ NovaSheets implements single-line comments (`// ...`), multi-line unparsed comme
 ### Parser constants
 *More info: [Parser constants](/docs/constants)*
 
-The parser contains a few constants which affect how NovaSheets code is parsed. These constants can be modified by using the `@const` keyword on its own line anywhere in the document.
+The parser contains a few constants which affect how NovaSheets code is parsed.
+These constants can be modified by using the `@const` keyword on its own line anywhere in the document.

@@ -356,8 +356,8 @@ NovaSheets includes many built-in [variables](/docs/variables/) which take the f
 
 ### @breakpoint
 **Syntax:** `$(@breakpoint | <pixels>[px] [| <selector>] | <smaller> [| <larger>] )`<br>
-**Result:** Outputs two media queries, one for widths less than or equal to than `<pixels>` (containing `<smaller>`) and one for widths greater than `<pixels>` (containing `<larger>`). When `<selector>` is set, `<smaller>` and `<larger>` should not be block declarations; otherwise, they should be. `<larger>` is optional in both cases.<br>
-**Example:** `$(@breakpoint | 800px | .container | width: 100%; | width: 20vw; )` &rarr; `@media (min-width: 801px) { .container { width: 100%; } } @media (max-width: 800px) { .container { width: 20vw;} }`
+**Result:** Outputs two media queries, one for widths less than `<pixels>` (containing `<smaller>`) and one for widths greater than or equal to `<pixels>` (containing `<larger>`). When `<selector>` is set, `<smaller>` and `<larger>` should not be block declarations; otherwise, they should be. `<larger>` is optional in both cases.<br>
+**Example:** `$(@breakpoint | 800px | .container | width: 100%; | width: 20vw; )` &rarr; `@media (min-width: 800px) { .container { width: 100%; } } @media (max-width: 799px) { .container { width: 20vw;} }`
 
 ### @prefix
 **Syntax:** `$(@prefix | <property> | <value> )`<br>

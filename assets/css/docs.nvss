@@ -13,6 +13,7 @@ $(@breakpoint | 800px |
 )
 
 // Code blocks //
+pre {width: fit-content; margin-left: 1em;}
 :not(pre)>code {border: 1px solid #8888; padding: 2px;}
 
 // Headings //
@@ -24,5 +25,6 @@ a {scroll-margin-top: 70px;}
   %:not([href]) {font-weight: bold; text-decoration: none;}
 
 // TOC //
-#toc + ul {display: inline-block; padding: 1em 1em 1em 2em; border: 1px solid #ddd; margin-top: -1em;}
-& @ 930px {display: grid; grid-auto-flow: column;}
+#toc + ul {display: flex; flex-wrap: wrap; gap: 2em; width: fit-content; padding: 1em 1em 1em 2em; border: 1px solid #ddd; margin-top: -1em;}
+
+/* Copyright © Nixinova 2021 */

@@ -10,21 +10,31 @@ js2: colouring
 
 # Installing NovaSheets
 
-## npm
-Install [NovaSheets on npm](https://npmjs.org/package/novasheets) via the command line using `npm install -g novasheets`, and then get started using `novasheets --help`.
-You must have [Node.js](https://nodejs.org/) installed to do this.
+Once NovaSheets is successfully installed, see the [docs](/docs/#usage) for usage.
+
+## Command-line usage
+
+For command-line usage, install [NovaSheets on npm](https://npmjs.org/package/novasheets) globally via the command line using `npm install -g novasheets`, and then get started using `novasheets --help`.
+Command-line usage also works if NovaSheets is installed locally (without the `-g`/`--global` flag), but the commands are prefixed with `npx` (`npx novasheets ...`).
+
+## Node usage
+
+For use in [Node.js](https://nodejs.org/), install the NovaSheets npm package locally via the command line using `npm install novasheets`.
 
 ## Browser
+
 NovaSheets is installed simply by embedding a JavaScript file into your HTML.
 This file can be downloaded and hosted locally by you (see [§&nbsp;Downloading](#downloading))
 or you can link directly to the source code (see [§&nbsp;Importing](#importing)).
 That's it!
 
 ### Downloading
+
 See the [Versions](/versions/) page to choose a version to download.
 Once you have done this, you can download one of the files given and add them to your project, or embed NovaSheets into your project directly using the code provided.
 
 ### Importing
+
 The latest version is <strong>{{version}}</strong> and can be imported using the code below:
 ```html
 <script src="https://novasheets.nixinova.com/src/{{version}}/min"></script>
@@ -51,19 +61,7 @@ You can choose to always import the latest stable version of NovaSheets using th
 <script src="https://novasheets.nixinova.com/src/stable/min"></script>
 ```
 
-Alternatively, you can choose to import the main live source code directly, but be warned that it is continually updated and may contain incomplete or buggy features, so use it at your own risk:
-```html
-<script src="https://novasheets.nixinova.com/src/latest"></script>
-```
-
 ### Browser support
 
 NovaSheets is supported in all major browsers, including Chrome, Edge (Chromium), Firefox, Opera, and Safari.
-NovaSheets does not work in older browsers such as Internet Explorer, as it is written using the following features from ECMAScript versions up to ES2018:
-
-- Arrow functions (`=>`)
-- `let` and `const` declarations
-- Rest operator (`...`)
-- Nullish coalescing operator (`??`)
-- Optional chaining (`?.`)
-- RegEx lookbehinds (`(?<!.)` and `(?<=.)`)
+NovaSheets does not work in older browsers such as Internet Explorer as it is written using features from ECMAScript versions up to ES2018.
