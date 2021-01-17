@@ -1,3 +1,6 @@
+https://novasheets.netlify.app/*  https://novasheets.js.org/:splat
+https://novasheets.nixinova.com/* https://novasheets.js.org/:splat
+
 /*                              /pages/:splat                       200
 
 /docs/variables/default/        /docs/default-variables/

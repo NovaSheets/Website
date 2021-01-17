@@ -1,7 +1,7 @@
 {
     "description": "Documentation for NovaSheets, the simple and powerful CSS preprocessor",
     "scripts": {
-        "build": "novasheets -c _site/**/*.nvss && eleventy",
+        "build": "eleventy",
         "serve": "eleventy --serve"
     },
     "repository": {
@@ -12,9 +12,8 @@
     "bugs": {
         "url": "https://github.com/NovaSheets/website/issues"
     },
-    "homepage": "https://novasheets.nixinova.com",
+    "homepage": "https://novasheets.js.org",
     "devDependencies": {
-        "novasheets": "^0.6.7",
         "@11ty/eleventy": "^0.11.1"
     }
 }
