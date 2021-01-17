@@ -1,0 +1,10 @@
+---
+permalink: /readme.adoc
+---
+
+== NovaSheets website
+
+This branch contains the compiled NovaSheets website content built from the https://github.com/NovaSheets/website[main branch] of this repository using https://github.com/11ty/eleventy[Eleventy].
+
+Each commit to this branch is created automatically with a GitHub Action upon a new commit to the main branch.
+This branch is then deployed to https://novasheets.js.org[novasheets.js.org] via GitHub Pages.
