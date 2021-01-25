@@ -14,9 +14,11 @@ js2: headings
   - [Node](#node)
     - [Command-line](#command-line)
     - [Commands](#commands)
+    - [NovaSheets Class](/docs/class)
   - [Browser](#browser)
     - [Importing](#importing)
     - [Embedding](#embedding)
+    - [Scripting](#scripting)
 - [Syntax](#syntax)
   - [Variables](#variables)
   - [Operators](#operators)
@@ -30,9 +32,9 @@ js2: headings
 ### Node
 
 <pre class="code-styles">
-<span class="js-keyword">const</span> { <span class="js-function">parse</span>, <span class="js-function">compile</span> } = <span class="js-function">require</span>(<span class="js-string">'novasheets'</span>);
-<span class="js-function">parse</span>(<span class="js-string">'@var color = #fff @endvar $(@shade | $(color) | 50% )'</span>); <span class="comment">// "#7f7f7f"</span>
-<span class="js-function">compile</span>(<span class="js-string">'stylesheet.nvss'</span>, <span class="js-string">'output.css'</span>); <span class="comment">// void</span>
+<span class="js-keyword">const</span> <span class="js-class">NovaSheets</span> = <span class="js-function">require</span>(<span class="js-string">'novasheets'</span>);
+<span class="js-class">NovaSheets</span>.<span class="js-function">parse</span>(<span class="js-string">'@var color = #fff @endvar $(@shade | $(color) | 50% )'</span>); <span class="comment">// "#7f7f7f"</span>
+<span class="js-class">NovaSheets</span>.<span class="js-function">compile</span>(<span class="js-string">'stylesheet.nvss'</span>, <span class="js-string">'output.css'</span>); <span class="comment">// void</span>
 </pre>
 
 NovaSheets contains two functions, `parse` and `compile`.
@@ -46,17 +48,20 @@ The latter two are meta-commands. When installed globally, run commands using `n
 
 #### Commands
 
-- Node: `parse(input)`<br>
+- Node: `parse(input, [<class>])`<br>
   CLI: `novasheets (-p|--parse) <input>`
   - Parses the NovaSheets code given as its input and returns the parsed CSS content as a string.
+    `class` (Node only) is an instance of a [NovaSheets class](/docs/class).
   - Example:<br>
     &emsp;Node: `parse("@var foo = bar=$[baz] @endvar $(foo|baz=qux)")`<br>
     &emsp;CLI: `novasheets -p "@var foo = bar=$[baz] @endvar $(foo|baz=qux)"`
     - Returns string `bar=qux`.
-- Node: `compile(<input>, [<output>])`<br>
-  CLI: `novasheets [(-c|--compile)] <input> [<output>]`
+- Node: `compile(<input>, [<output>], [<class>])`<br>
+  CLI: `novasheets (-c|--compile) <input> [<output>]`
   - Compiles the files matching the input [glob](https://www.npmjs.com/package/glob#glob-primer) into the output. 
-    If the output is not set, or it is a folder path (ending with `/`), the input filename (replaced with a `.css` extension) is used. Has no return value but logs console messages for each successful compilation.
+    If the output is not set, or it is a folder path (ending with `/`), the input filename (replaced with a `.css` extension) is used.
+    `class` (Node only) is an instance of a [NovaSheets class](/docs/class).
+    Has no return value but logs console messages for each successful compilation.
   - Example:<br>
     &emsp;Node: `compile('css/*.nvss', '_site/css/')`<br>
     &emsp;CLI: `novasheets -c css/*.nvss _site/css/`
@@ -64,7 +69,7 @@ The latter two are meta-commands. When installed globally, run commands using `n
 - CLI only: `novasheets (-h|--help)`
   - Displays a help message showing all commands.
 - CLI only: `novasheets (-v|--version)`
-  - Outputs the latest version of NovaSheets ({{version}}).
+  - Outputs the latest version of NovaSheets.
 
 ### Browser
 
@@ -94,6 +99,13 @@ Inline stylesheets can be created by simply setting the `type` attribute of an e
     & p, & img {border: 2px solid;}
 `</script>
 ```
+
+#### Scripting
+
+Browser usage supports similar scripting to Node usage, but with the only function being `parseNovaSheets()`.
+When set with no parameters, it parses any embedded NovaSheets syntax/files on the page.
+Otherwise, the raw NovaSheets input (first parameter) is parsed and returned as a string.
+The second parameter may be set to an instance of a [NovaSheets class](/docs/class).
 
 ## Syntax
 
@@ -130,4 +142,4 @@ NovaSheets implements single-line comments (`// ...`), multi-line unparsed comme
 *More info: [Parser constants](/docs/constants)*
 
 The parser contains a few constants which affect how NovaSheets code is parsed.
-These constants can be modified by using the `@const` keyword on its own line anywhere in the document.
+These constants can be modified by using the `@option` keyword on its own line anywhere in the document.

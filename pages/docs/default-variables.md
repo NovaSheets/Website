@@ -1,12 +1,12 @@
 ---
 layout: docs
-permalink: /docs/default-variables/
-title: Default Variables
+permalink: /docs/builtin-functions/
+title: Built-in Functions
 js: headings
 js2: colouring
 ---
 
-# NovaSheets Default Variables <!-- omit in toc -->
+# NovaSheets Built-in Functions <!-- omit in toc -->
 NovaSheets includes many built-in [variables](/docs/variables/) which take the form of a variety of functions. The following is a list of these and their syntax.
 
 ## Contents <!-- omit in toc -->

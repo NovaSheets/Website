@@ -7,20 +7,24 @@ js: colouring
 # NovaSheets Parser Constants
 
 ```nvss
-@const <name> <value>
+@option <name> <value>
 ```
 
-The parser contains a few constants which affect how NovaSheets code is parsed. These constants can be modified by using the `@const` keyword anywhere in the document. The following parser constants are available:
+The parser contains a few constants which effect how NovaSheets code is parsed.
+These constants can be modified by using the `@option` keyword anywhere in the document.
+The following parser constants are available:
 
-- `@const MAX_RECURSION <integer>`
-  - Controls how many times variable nesting, math, etc, will be iterated over; defaults to `50`.
-- `@const MAX_MATH_RECURSION <integer>`
-  - Controls how many times math operations will be iterated over; defaults to `5`.
-- `@const MAX_ARGUMENTS <integer>`
-  - Controls the maximum number of arguments a variable can have; defaults to `10`.
-- `@const DECIMAL_PLACES {<integer>|false}`
+- `@option BUILTIN_FUNCTIONS <boolean>`
+  - Controls whether or not built-in functions should be implemented; defaults to `true`.
+- `@option DECIMAL_PLACES {<integer>|false}`
   - Controls how many decimal places numbers are outputted with. Has no effect when set to `false` (default).
-- `@const KEEP_NAN <boolean>`
+- `@option KEEP_NAN <boolean>`
   - Controls whether or not `NaN` should be outputted when parsing invalid numbers; defaults to `false`.
-- `@const KEEP_UNPARSED <boolean>`
+- `@option KEEP_UNPARSED <boolean>`
   - Controls whether or not undeclared variables should be kept in the output CSS; defaults to `false`.
+- `@option MAX_MATH_RECURSION <integer>`
+  - Controls how many times math operations will be iterated over; defaults to `5`.
+- `@option MAX_RECURSION <integer>`
+  - Controls how many times variable nesting etc will be iterated over; defaults to `50`.
+- `@option MAX_ARGUMENTS <integer>`
+  - Controls the maximum number of arguments a variable can have; defaults to `10`.

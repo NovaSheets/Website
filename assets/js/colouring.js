@@ -46,6 +46,9 @@ function colouriseCode() {
             //.replace(/(?<!(?:\/\/|\/\*).*)(\||\$|\(|\)|\[|\])/g, wrap('$&', 'nvss-char'))
             .replace(/[{}]/g, wrap('$&', 'css-char')) // brackets
 
+            // String
+            .replace(/(['"]).+?\1/g, val => wrap(val.replace(/§([\w-]+)¶([^¶§]+?)¶\1§/g,'$2'), 'js-string'))
+
             // HTML re-fixing
             .replace(/↑(amp|lt|gt|nbsp)↓/g, '&$1;')
             .replace(/\\n/g, '\n<br>')

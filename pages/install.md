@@ -15,7 +15,6 @@ Once NovaSheets is successfully installed, see the [docs](/docs/#usage) for usag
 ## Command-line usage
 
 For command-line usage, install [NovaSheets on npm](https://npmjs.org/package/novasheets) globally via the command line using `npm install -g novasheets`, and then get started using `novasheets --help`.
-Command-line usage also works if NovaSheets is installed locally (without the `-g`/`--global` flag), but the commands are prefixed with `npx` (`npx novasheets ...`).
 
 ## Node usage
 
@@ -35,30 +34,36 @@ Once you have done this, you can download one of the files given and add them to
 
 ### Importing
 
-The latest version is <strong>{{version}}</strong> and can be imported using the code below:
+The latest version is **{{version.latest}}** and can be imported using the code below:
 ```html
-<script src="https://novasheets.js.org/src/{{version}}/min"></script>
+<script src="https://novasheets.js.org/src/{{version.latest}}/min"></script>
 ```
 
 While the minified version above is recommended for general use, you can also choose to use the more verbose regular version, which includes comments and indentation:
 ```html
-<script src="https://novasheets.js.org/src/{{version}}"></script>
+<script src="https://novasheets.js.org/src/{{version.latest}}"></script>
 ```
 
 #### Wildcards
 
 Additionally, you can choose to use a wildcard version, where you will always receive the latest patch:
 ```html
-<script src="https://novasheets.js.org/src/{{version | replace(r/\.\d+$/, '.x')}}"></script>
-<script src="https://novasheets.js.org/src/{{version | replace(r/\.\d+$/, '.x')}}/min"></script>
+<script src="https://novasheets.js.org/src/0.6.x"></script>
+<script src="https://novasheets.js.org/src/0.6.x/min"></script>
 ```
 
 #### Latest
 
-You can choose to always import the latest stable version of NovaSheets using the code below, but be warned it may contain breaking changes in an update:
+You can choose to always import the latest stable version of NovaSheets (**{{version.stable}}**) using the code below, but be warned it may contain breaking changes in an update:
 ```html
 <script src="https://novasheets.js.org/src/stable"></script>
 <script src="https://novasheets.js.org/src/stable/min"></script>
+```
+
+You may instead choose to opt-in to receive development versions of NovaSheets, but be warned these are even more likely to contain breaking changes:
+```html
+<script src="https://novasheets.js.org/src/latest"></script>
+<script src="https://novasheets.js.org/src/latest/min"></script>
 ```
 
 ### Browser support

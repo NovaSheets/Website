@@ -1,13 +1,12 @@
-#https://novasheets.netlify.app/*  https://novasheets.js.org/:splat
-#https://novasheets.nixinova.com/* https://novasheets.js.org/:splat
+https://novasheets.netlify.app/*  https://novasheets.js.org/:splat
+https://novasheets.nixinova.com/* https://novasheets.js.org/:splat
 
-/*                              /pages/:splat                       200
-
-/docs/variables/default/        /docs/default-variables/
+/docs/variables/default/        /docs/builtin-functions/
+/docs/default-variables/        /docs/builtin-functions/
 
 /src/latest                     /src/novasheets.js
-/src/stable                     /src/vers/novasheets-0.6.7.js
-/src/stable/min                 /src/vers/novasheets-0.6.7.min.js
+/src/latest/min                 /src/novasheets.min.js
+/src/stable*                    /src/0.6.7:splat
 /src/:ver                       /src/vers/novasheets-:ver.js
 /src/:ver/min                   /src/vers/novasheets-:ver.min.js
 /src/vers/novasheets-0.1.x*     /src/vers/novasheets-0.1.2:splat
@@ -16,3 +15,6 @@
 /src/vers/novasheets-0.4.x*     /src/vers/novasheets-0.4.7:splat
 /src/vers/novasheets-0.5.x*     /src/vers/novasheets-0.5.2:splat
 /src/vers/novasheets-0.6.x*     /src/vers/novasheets-0.6.7:splat
+/src/vers/novasheets-1.0.0-pre* /src/vers/novasheets-1.0.0-pre1:splat
+/src/vers/novasheets-1.0.x*     /src/vers/novasheets-1.0.0-pre1:splat
+/src/vers/novasheets-1.x*       /src/vers/novasheets-1.0.0-pre1:splat

@@ -47,6 +47,7 @@ li>strong {margin-left: -1.1em; background: $(body color);}
 
 // Changelog //
 h2[id] + p em {display: block; margin-top: -3.4em; margin-left: 4em;}
+h2[id*="-"] + p em {margin-left: 8em;}
 
 // Code blocks //
 @var code color = color: hsl($[1], 90%, $[2|40%]);
@@ -60,7 +61,7 @@ $(code|.css-value) {$(code color | 20)}
 $(code|.css-char) {$(code color | 200 | 30%)}
 $(code|.html-tag) {$(code color | 200)}
 $(code|.html-attr-name) {$(code color | 180)}
-$(code|.html-attr-val) {$(code color | 35)}
+$(code|.html-attr-val) {$(code color | 35 | 60%)}
 $(code|.nvss-char) {$(code color | 200)}
 $(code|.nvss-selector) {$(code color | 70)}
 $(code|.nvss-var) {$(code color | 160)}
@@ -69,9 +70,10 @@ $(code|.nvss-var-arg) {color: #fff;}
 $(code|.nvss-arg) {$(code color | 280 | 60%)}
 $(code|.nvss-arg-default) {$(code color | 330)}
 $(code|.js-keyword) {$(code color | 200)}
-$(code|.js-class) {$(code color | 50)}
+$(code|.js-class) {$(code color | 160 | 60%)}
 $(code|.js-function) {$(code color | 50 | 70%)}
 $(code|.js-string) {$(code color | 20 | 60%)}
+$(code|.js-variable) {$(code color | 200 | 60%)}
 
 // Hiding //
 .hide {display: none !important;}

@@ -1,8 +1,10 @@
 {
-    "description": "Documentation for NovaSheets, the simple and powerful CSS preprocessor",
+    "description": "Documentation for NovaSheets, the simple but powerful CSS preprocessor",
     "scripts": {
         "build": "eleventy",
-        "serve": "eleventy --serve"
+        "postbuild": "novasheets -c _site/**/*.nvss",
+        "serve": "eleventy --serve",
+        "minify": "terser src/novasheets.js -c -m eval,toplevel,reserved=['parseNovaSheets'] -o src/novasheets.min.js"
     },
     "repository": {
         "type": "git",

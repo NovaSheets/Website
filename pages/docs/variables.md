@@ -7,6 +7,9 @@ js: colouring
 # NovaSheets Variables
 
 ## Declaring
+
+### Inside a stylesheet
+
 - Single-line:
   ```nvss
   @var <name> = <contents>
@@ -32,6 +35,10 @@ $(variable) // "content"
 $(variable) // "content"
 @var variable = content
 ```
+
+### Using JavaScript
+
+Variables can be created using JavaScript and then applied to a document, using the [NovaSheets class](/docs/class).
 
 ## Substitution
 ### Variables
