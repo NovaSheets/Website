@@ -1,4 +1,5 @@
 {
+    "name": "website",
     "description": "Documentation for NovaSheets, the simple but powerful CSS preprocessor",
     "scripts": {
         "build": "eleventy",
