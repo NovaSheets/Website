@@ -43,7 +43,7 @@ table {margin: 2em auto; border-collapse: collapse;}
 .flatlist li {display: inline;}
 .plainlist li {display: inline-block;}
 .flatlist:not(.plainlist) li:not(:empty):not(:first-child)::before {content: ' • ';}
-li>strong {margin-left: -1.1em; background: $(body color);}
+:not(li)>ul>li>strong {margin-left: -1.1em; background: $(body color);}
 
 // Changelog //
 h2[id] + p em {display: block; margin-top: -3.4em; margin-left: 4em;}
