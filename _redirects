@@ -15,6 +15,6 @@ https://novasheets.nixinova.com/* https://novasheets.js.org/:splat
 /src/vers/novasheets-0.4.x*     /src/vers/novasheets-0.4.7:splat
 /src/vers/novasheets-0.5.x*     /src/vers/novasheets-0.5.2:splat
 /src/vers/novasheets-0.6.x*     /src/vers/novasheets-0.6.7:splat
-/src/vers/novasheets-1.0.0-pre* /src/vers/novasheets-1.0.0-pre1:splat
-/src/vers/novasheets-1.0.x*     /src/vers/novasheets-1.0.0-pre1:splat
-/src/vers/novasheets-1.x*       /src/vers/novasheets-1.0.0-pre1:splat
+/src/vers/novasheets-1.0.0-pre* /src/vers/novasheets-1.0.0-pre3:splat
+/src/vers/novasheets-1.0.x*     /src/vers/novasheets-1.0.0-pre3:splat
+/src/vers/novasheets-1.x*       /src/vers/novasheets-1.0.0-pre3:splat
