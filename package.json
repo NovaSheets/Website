@@ -3,7 +3,7 @@
     "description": "Documentation for NovaSheets, the simple but powerful CSS preprocessor",
     "scripts": {
         "build": "eleventy",
-        "postbuild": "novasheets -c _site/**/*.nvss",
+        "postbuild": "novasheets -c _site/assets/css/*.nvss",
         "serve": "eleventy --serve",
         "minify": "terser src/novasheets.js -c -m eval,toplevel,reserved=['parseNovaSheets'] -o src/novasheets.min.js"
     },
