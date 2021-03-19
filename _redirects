@@ -1,5 +1,5 @@
-https://novasheets.netlify.app/*  https://novasheets.js.org/:splat
-https://novasheets.nixinova.com/* https://novasheets.js.org/:splat
+//novasheets.netlify.app/*      https://novasheets.js.org/:splat
+//novasheets.nixinova.com/*     https://novasheets.js.org/:splat
 
 /docs/variables/default/        /docs/builtin-functions/
 /docs/default-variables/        /docs/builtin-functions/
