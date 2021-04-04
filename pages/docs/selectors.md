@@ -6,31 +6,25 @@ js: colouring
 ---
 # NovaSheets Selectors
 
-## Previous element selectors
+## Nesting
 
-```css
-a {} & b {} & c {} & d {} // a {} a b {} a c {} a d {}
-a {} % b {} % c {} % d {} // a {} a b {} a b c {} a b c d {}
-a {} & b {} % c {} & d {} // a {} a b {} a b c {} a d {}
-a {} % b {} & c {} & d {} // a {} a b {} a b c {} a b d {}
+```less
+.class {
+  color: red;
+  a {color: blue;}
+  div & {color: green;}
+}
+/* becomes */
+.class {color: red;}
+.class a {color: blue;}
+div .class {color: green;}
 ```
 
-NovaSheets adds previous element selectors, which copy the content of a previous CSS selector. There are two types: ampersands (`&`) and percents (`%`).
-Ampersands copy the last *raw* selector, while percents copy the selector directly before the current one. A 'raw' selector is one that does not contain any ampersands; it may contain percents if they resolve to a raw selector. Ampersands in adjacent selectors all refer to the same element.
-
-## Item slicing
-
-```css
-a b {} &< c {} // a b {} a c {}
-a {} % b {} %< c {} // a {} a b {} a c {}
-.item .child < {} // .item {}
-```
-
-Less-than signs (`<`) can be used to slice the last item off of a selector. Characters treated as item delimiters are `>`, `+`, `~`, and whitespace (CSS combinators). This can be used along with previous element selectors to fine tune similar selectors.
+NovaSheets includes CSS nesting. If an ampersand `&` is not used, the parent selector is prepended to the child, separated by a space. Otherwise, the ampersand is replaced with the content of the parent selector.
 
 ## Simple breakpoints
 
-```
+```less
 h2 @ ..300px       {width: 99%;} // max width 299px
 h2 @ 400px         {width: 80%;} // min width 400px
 h2 @ 500px...      {width: 75%;} // min width 500px
