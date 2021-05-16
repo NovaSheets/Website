@@ -18,6 +18,6 @@
     "homepage": "https://novasheets.js.org",
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
-        "novasheets": "^1.0.0-pre3"
+        "novasheets": "^1.0.0-rc1"
     }
 }

@@ -3,18 +3,21 @@
 @var header color = $(theme color | 15%)
 @var header height = 70px
 @var main height = calc(100vh - $(header height))
+
 :root {--main-height: $(main height); --header-height: $(header height);}
 
 // Base elements //
 * {box-sizing: border-box;}
 body {font: normal 16px Roboto, sans-serif; background: $(body color); margin: 0; color: #eee; line-height: 1.8;}
-main {min-height: $(main height); padding: $(header height) 10% 0 10%;}
+main {
+    min-height: $(main height); padding: $(header height) 10% 0 10%;
+    @ ..800px {padding: $(header height) 2em 0;}
+}
 strong {letter-spacing: 1px; letter-spacing: 1.5px;}
 h1, h2, h3, h4, h5 {
     margin-left: -0.5em; letter-spacing: 1.5px; font-weight: normal;
     &, p {margin-top: 1em;}
 }
-main @ ..800px {padding: $(header height) 2em 0;}
 
 // Header //
 @var line height = line-height: $(header height)
@@ -27,8 +30,8 @@ header {
         a.active {background: $(theme color | 10%);}
         a:hover {background: $(theme color | 12%);}
     }
+    ul @ ..800px {padding: 0;}
 }
-header ul @ ..800px {padding: 0;}
 
 // Footer //
 footer {width: 100%; height: $(header height); $(line height); background: $(header color); text-align: center;}
@@ -58,7 +61,9 @@ table {
 :not(li)>ul>li>strong {margin-left: -1.1em; background: $(body color);}
 
 // Changelog //
-h2[id] + p em {display: block; margin-top: -3.4em; margin-left: 4em;}
+[id] + p em {display: block;}
+h2[id] + p em {margin-top: -3.4em; margin-left: 4em;}
+h3[id] + p em {margin-top: -3em; margin-left: 6em;}
 h2[id*="-"] + p em {margin-left: 8em;}
 
 // Code blocks //
@@ -92,7 +97,7 @@ $(code|.js-variable) {$(code color | 200 | 60%)}
 
 // Responsive //
 @ ..800px {
-    .desktoponly @ ...800px {display: none;}
+    .desktoponly {display: none;}
 }
 @ 800px.. {
     .mobileonly {display: none;}
