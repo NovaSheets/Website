@@ -3,5 +3,5 @@
 package-lock.json -diff
 
 # Linguist
-src/*       linguist-vendored
-*.nvss      linguist-language=CSS
+src/**/*    linguist-vendored
+*.nvss      linguist-language=Less

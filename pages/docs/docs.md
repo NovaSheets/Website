@@ -14,7 +14,6 @@ js2: headings
   - [Node](#node)
     - [Command-line](#command-line)
     - [Commands](#commands)
-    - [NovaSheets Class](/docs/class)
   - [Browser](#browser)
     - [Importing](#importing)
     - [Embedding](#embedding)

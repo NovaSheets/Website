@@ -1,6 +1,6 @@
-@var theme color = $(@color | hsl | 220 | 25% | $[1] )
-@var body color = $(theme color | 20%)
-@var header color = $(theme color | 15%)
+@var theme color = $( @color | hsl | 220 | 25% | $[1] )
+@var body color = $( theme color | 20% )
+@var header color = $( theme color | 15% )
 @var header height = 70px
 @var main height = calc(100vh - $(header height))
 
@@ -27,8 +27,8 @@ header {
     span {
         transition: 0.5s;
         a[href] {display: block; padding: $(header height)/4; $(line height)/2; color: white;}
-        a.active {background: $(theme color | 10%);}
-        a:hover {background: $(theme color | 12%);}
+        a.active {background: $( theme color | 10% );}
+        a:hover {background: $( theme color | 12% );}
     }
     ul @ ..800px {padding: 0;}
 }
@@ -57,7 +57,7 @@ table {
 .flatlist, .plainlist {margin: 0;}
 .flatlist li {display: inline;}
 .plainlist li {display: inline-block;}
-.flatlist:not(.plainlist) li:not(:empty):not(:first-child)::before {content: ' • ';}
+.flatlist:not(.plainlist) li: not(:empty):not(:first-child)::before {content: ' • ';}
 :not(li)>ul>li>strong {margin-left: -1.1em; background: $(body color);}
 
 // Changelog //
@@ -67,45 +67,44 @@ h3[id] + p em {margin-top: -3em; margin-left: 6em;}
 h2[id*="-"] + p em {margin-left: 8em;}
 
 // Code blocks //
-@var code color = color: hsl($[1], 90%, $[2|40%]);
+@var code color = color: hsl($[1], 90%, $[2 | 40%]);
 @var code = .code>$[1], .code-styles>$[1]
 pre {margin: 1em 0; border: 1px solid #fff; padding: 10px; background: #181818; text-align: left; white-space: pre-wrap; word-break: break-word;}
-$(code|.comment) {$(code color | 130 | 33%)}
-$(code|.css-query) {$(code color | 60)}
-$(code|.css-selector) {$(code color | 40)}
-$(code|.css-property) {$(code color | 180)}
-$(code|.css-value) {$(code color | 20)}
-$(code|.css-char) {$(code color | 200 | 30%)}
-$(code|.html-tag) {$(code color | 200)}
-$(code|.html-attr-name) {$(code color | 180)}
-$(code|.html-attr-val) {$(code color | 35 | 60%)}
-$(code|.nvss-char) {$(code color | 200)}
-$(code|.nvss-selector) {$(code color | 70)}
-$(code|.nvss-var) {$(code color | 160)}
-$(code|.nvss-var-param) {$(code color | 280 | 60%)}
-$(code|.nvss-var-arg) {color: #fff;}
-$(code|.nvss-arg) {$(code color | 280 | 60%)}
-$(code|.nvss-arg-default) {$(code color | 330)}
-$(code|.js-keyword) {$(code color | 200)}
-$(code|.js-class) {$(code color | 160 | 60%)}
-$(code|.js-function) {$(code color | 50 | 70%)}
-$(code|.js-string) {$(code color | 20 | 60%)}
-$(code|.js-variable) {$(code color | 200 | 60%)}
+$( code | .comment ) {$( code color | 130 | 33% )}
+$( code | .css-query ) {$( code color | 60 )}
+$( code | .css-selector ) {$( code color | 40 )}
+$( code | .css-property ) {$( code color | 180 )}
+$( code | .css-value ) {$( code color | 20 )}
+$( code | .css-char ) {$( code color | 200 | 30% )}
+$( code | .html-tag ) {$( code color | 200 )}
+$( code | .html-attr-name ) {$( code color | 180 )}
+$( code | .html-attr-val ) {$( code color | 35 | 60% )}
+$( code | .nvss-char ) {$( code color | 200 )}
+$( code | .nvss-selector ) {$( code color | 70 )}
+$( code | .nvss-var ) {$( code color | 160 )}
+$( code | .nvss-var-param ) {$( code color | 280 | 60% )}
+$( code | .nvss-var-arg ) {color: #fff;}
+$( code | .nvss-arg ) {$( code color | 280 | 60% )}
+$( code | .nvss-arg-default ) {$( code color | 330 )}
+$( code | .js-keyword ) {$( code color | 200 )}
+$( code | .js-class ) {$( code color | 160 | 60% )}
+$( code | .js-function ) {$( code color | 50 | 70% )}
+$( code | .js-string ) {$( code color | 20 | 60% )}
+$( code | .js-variable ) {$( code color | 200 | 60% )}
 
 // Hiding //
 .hide {display: none !important;}
 
 // Responsive //
-@ ..800px {
+$( @breakpoint | 800px |
     .desktoponly {display: none;}
-}
-@ 800px.. {
+|
     .mobileonly {display: none;}
     ::-webkit-scrollbar {
         width: 1em;
         &-track {background: #112d;}
         &-thumb {background: #eef; box-shadow: inset 0 0 6px #0114;}
     }
-}
+)
 
 /* Copyright © Nixinova 2020 */
