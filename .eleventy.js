@@ -10,6 +10,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addWatchTarget("assets");
     eleventyConfig.addWatchTarget("pages");
 
+    const { exec } = require('child_process');
+    eleventyConfig.on('afterBuild', () => {
+        exec('novasheets --compile _site/assets/css/*.nvss');
+    });
+
     return {
         passthroughFileCopy: true,
         dir: {
@@ -18,5 +23,5 @@ module.exports = function (eleventyConfig) {
             data: "assets/data"
         }
     };
-    
+
 }

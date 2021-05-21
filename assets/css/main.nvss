@@ -2,7 +2,7 @@
 @var body color = $( theme color | 20% )
 @var header color = $( theme color | 15% )
 @var header height = 70px
-@var main height = calc(100vh - $(header height))
+@var main height = 100vh
 
 :root {--main-height: $(main height); --header-height: $(header height);}
 
