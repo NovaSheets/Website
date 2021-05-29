@@ -1,0 +1,10 @@
+When a new version is released:
+- Run build command in main repo
+- Run minify command
+- Move new files
+- Bump NovaSheets version
+- Update changelog
+- Update version.json
+- Update versions.ejs
+- Update redirects
+- Check website is not broken

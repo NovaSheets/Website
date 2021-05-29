@@ -1,9 +1,6 @@
 # Dependencies
 node_modules/
 
-# Package
-package-lock.json
-
 # Site build
 _site/
 *.css
