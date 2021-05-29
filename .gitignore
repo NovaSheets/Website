@@ -1,6 +1,12 @@
+# Dependencies
 node_modules/
-_site/
-*.local.*
 
-# Local Netlify folder
-.netlify
+# Package
+package-lock.json
+
+# Site build
+_site/
+*.css
+
+# Dev files
+*.local.*
