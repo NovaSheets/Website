@@ -43,6 +43,7 @@ a {
 }
 main a[href] {
     text-decoration: underline;
+    color: white;
     &:hover {text-decoration: none;}
 }
 [id] {scroll-margin-top: $(header height);}

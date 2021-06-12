@@ -1,23 +1,18 @@
 {
     "name": "website",
     "description": "Documentation for NovaSheets, the simple but powerful CSS preprocessor",
-    "scripts": {
-        "build": "eleventy",
-        "serve": "eleventy --serve",
-        "minify": "terser src/novasheets.js -c -m eval,toplevel,reserved=['parseNovaSheets'] -o src/novasheets.min.js"
+    "homepage": "https://novasheets.js.org",
+    "bugs": {
+        "url": "https://github.com/NovaSheets/website/issues"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/NovaSheets/website.git"
     },
     "author": "Nixinova (https://nixinova.com)",
-    "bugs": {
-        "url": "https://github.com/NovaSheets/website/issues"
-    },
-    "homepage": "https://novasheets.js.org",
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
         "glob": "^7.1.7",
-        "novasheets": "^1.0.0-rc5"
+        "novasheets": "^1.0.0-rc6"
     }
 }

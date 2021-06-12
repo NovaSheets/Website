@@ -57,7 +57,7 @@ The latter two are meta-commands. When installed globally, run commands using `n
     - Returns string `bar=qux`.
 - Node: `compile(<input>, [<output>], [<class>])`<br>
   CLI: `novasheets (-c|--compile) <input> [<output>]`
-  - Compiles the files matching the input [glob](https://www.npmjs.com/package/glob#glob-primer) into the output. 
+  - Compiles the files matching the input [glob](https://www.npmjs.com/package/glob#glob-primer) into the output.
     If the output is not set, or it is a folder path (ending with `/`), the input filename (replaced with a `.css` extension) is used.
     `class` (Node only) is an instance of a [NovaSheets class](/docs/class).
     Has no return value but logs console messages for each successful compilation.
@@ -88,14 +88,18 @@ Inline stylesheets can be created by simply setting the `type` attribute of an e
 
 ```html
 <style type="novasheets">
-    .element {display: inline-block;}
-    % .child {font-size: 2/3em;}
+    .element {
+		display: inline-block;
+    	.child {font-size: 2/3em;}
+	}
 </style>
 ```
 ```html
 <script type="novasheets">`
-    div {background-color: brown;}
-    & p, & img {border: 2px solid;}
+    div {
+		background-color: brown;
+    	img {border: 2px solid;}
+	}
 `</script>
 ```
 
@@ -124,8 +128,7 @@ NovaSheets supports manipulating numerals using raw mathematical operators. Thes
 ### Selectors
 *More info: [Selectors](/docs/selectors)*
 
-NovaSheets adds previous element selectors, which copy the content of a previous CSS selector. Ampersands (`&`) take the previous *raw* selector (i.e., the last selector that does not contain an ampersand), while percent signs (`%`) take the previous selector.
-Less-than signs (`<`) can be used to slice the last item off the selector; characters treated as item delimiters are `:`, `>`, `+`, `~`, and whitespace. For example, `.item>div {} &< p {} %~img {}` outputs `.item>div {} .item p {} .item p~img {}`.
+NovaSheets includes CSS nesting, allowing for stylesheets to more closely reflect their HTML counterparts. Use an ampersand (`&`) to control where the parent selector shall be placed; by default it is prepended to the child selector separated with a space.
 
 ### Objects
 *More info: [Objects](/docs/objects)*
