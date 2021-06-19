@@ -6,7 +6,7 @@
 
 /src/latest*                    /src/stable:splat
 /src/stable*                    /src/1.x:splat
-/src/novasheets.js              /src/stable:splat
+/src/novasheets.js              /src/stable
 /src/novasheets.min.js          /src/stable/min
 /src/:ver                       /src/vers/novasheets-:ver.js
 /src/:ver/min                   /src/vers/novasheets-:ver.min.js

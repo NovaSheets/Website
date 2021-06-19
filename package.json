@@ -10,6 +10,10 @@
         "url": "git+https://github.com/NovaSheets/website.git"
     },
     "author": "Nixinova (https://nixinova.com)",
+    "scripts": {
+        "build": "eleventy",
+        "serve": "eleventy --serve"
+    },
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
         "glob": "^7.1.7",
