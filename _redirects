@@ -4,9 +4,10 @@
 /docs/variables/default/        /docs/builtin-functions/
 /docs/default-variables/        /docs/builtin-functions/
 
-/src/latest                     /src/novasheets.js
-/src/latest/min                 /src/novasheets.min.js
-/src/stable*                    /src/0.6.7:splat
+/src/latest*                    /src/stable:splat
+/src/stable*                    /src/1.x:splat
+/src/novasheets.js              /src/stable:splat
+/src/novasheets.min.js          /src/stable/min
 /src/:ver                       /src/vers/novasheets-:ver.js
 /src/:ver/min                   /src/vers/novasheets-:ver.min.js
 /src/vers/novasheets-0.1.x*     /src/vers/novasheets-0.1.2:splat
@@ -18,5 +19,5 @@
 /src/vers/novasheets-0.x*       /src/vers/novasheets-0.6.7:splat
 /src/vers/novasheets-1.0.0-pre* /src/vers/novasheets-1.0.0-pre4:splat
 /src/vers/novasheets-1.0.0-rc*  /src/vers/novasheets-1.0.0-rc6:splat
-/src/vers/novasheets-1.0.x*     /src/vers/novasheets-1.0.0-rc6:splat
-/src/vers/novasheets-1.x*       /src/vers/novasheets-1.0.0-rc6:splat
+/src/vers/novasheets-1.0.x*     /src/vers/novasheets-1.0.0:splat
+/src/vers/novasheets-1.x*       /src/vers/novasheets-1.0.0:splat

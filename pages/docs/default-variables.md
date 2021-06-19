@@ -195,12 +195,16 @@ NovaSheets includes many built-in [variables](/docs/variables/) which take the f
 
 ### @boolean
 **Syntax:** `$( @boolean | <contents> )`<br>
-**Result:** Performs bitwise operations on `<contents>`.<br>
+**Result:** Performs boolean operations on `<contents>`.<br>
+Allowed operators are `==`, `!=`, `<`, `>`, `!`/`not`, `||`/`or`, `nor`, `&&`/`and`, `nand`, `xor`, `xnor`.
 **Example:** `$(@boolean | true && false )` &rarr; `false`
 
 ### @if
-**Syntax:** `$( @if | <test> | <if true> | <if false>)`<br>
-**Result:** Outputs the either content of `<if true>` if `<test>` resolves to boolean "true" or `<if false>` if it resolves to false. Allowed operators for `test` include `==`, `!=`, `!`, `<`, `>`, `!`, `or`, `nor`, `and`, `nand`, `xor`, `xnor`. If `<test>` resolves to `false`, `null`, `undefined`, `NaN`, or an empty string, `<if false>` will be called, otherwise `<if true>` will be..<br>
+**Syntax:** `$( @if | <test> | <if-true> | <if-false>)`<br>
+**Result:**
+Outputs the either content of `<if-true>` if `<test>` resolves to boolean "true" or `<if-false>` if it resolves to false.
+Allowed operators are `==`, `!=`, `<`, `>`, `!`/`not`, `or`, `nor`, `&&`/`and`, `nand`, `xor`, `xnor`.
+If `<test>` resolves to `false`, `null`, `undefined`, `NaN`, or an empty string, `<if-false>` will be called, otherwise `<if-true>` will be.<br>
 **Example:** `$(@if | 1 == 2 | nonsense | truth )` &rarr; `truth`
 
 ## Text

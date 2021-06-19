@@ -37,7 +37,6 @@ function colouriseCode() {
 
             // NovaSheets other
             .replace(/\$v|\$i/g, wrap('$&', 'nvss-var')) // $v, $i
-            .replace(/↑amp↓(↑lt↓)*|%(↑lt↓)*/g, wrap('$&', 'nvss-selector')) // prev selectors
             .replace(/[|]/g, wrap('$&', 'nvss-char'))
 
             // HTML

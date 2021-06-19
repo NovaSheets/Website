@@ -48,8 +48,8 @@ While the minified version above is recommended for general use, you can also ch
 
 Additionally, you can choose to use a wildcard version, where you will always receive the latest patch:
 ```html
-<script src="https://novasheets.js.org/src/0.6.x"></script>
-<script src="https://novasheets.js.org/src/0.6.x/min"></script>
+<script src="https://novasheets.js.org/src/1.x"></script>
+<script src="https://novasheets.js.org/src/1.x/min"></script>
 ```
 
 #### Latest
@@ -59,13 +59,13 @@ You can choose to always import the latest stable version of NovaSheets (**{{ver
 <script src="https://novasheets.js.org/src/stable"></script>
 <script src="https://novasheets.js.org/src/stable/min"></script>
 ```
-
+<!--
 You may instead choose to opt-in to receive development versions of NovaSheets, but be warned these are even more likely to contain breaking changes:
 ```html
 <script src="https://novasheets.js.org/src/latest"></script>
 <script src="https://novasheets.js.org/src/latest/min"></script>
 ```
-
+-->
 ### Browser support
 
 NovaSheets is supported in all major browsers, including Chrome, Edge (Chromium), Firefox, Opera, and Safari.
