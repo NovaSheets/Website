@@ -48,7 +48,8 @@ description: "NovaSheets Versions"
   ['1.0.0-rc4' , '2021-05-29', 'gtag', ''],
   ['1.0.0-rc5' , '2021-05-29', 'gtag', ''],
   ['1.0.0-rc6' , '2021-06-12', 'gtag', ''],
-  ['1.0.0'     , '2021-06-19', 'docs', ''],
+  ['1.0.0'     , '2021-06-19', 'gtag', ''],
+  ['1.0.1'     , '2021-07-03', 'site', ''],
 ].reverse() -%>
 
 <table>
@@ -83,7 +84,7 @@ description: "NovaSheets Versions"
                     <a href="<%= org %>/NovaSheets/wiki/Syntax/<%= hash %>">Wiki</a>
                 <% } else if (docs === "gtag") { -%>
                     <a href="<%= org %>/website/tree/<%= ver %>/pages/docs">Browse</a>
-                <% } else if (docs === "docs") { -%>
+                <% } else if (docs === "site") { -%>
                     <a href="/docs/">Site</a>
                 <% } -%>
             </td>

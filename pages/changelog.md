@@ -5,7 +5,7 @@ permalink: /changelog/
 js: colouring
 ---
 # Changelog for NovaSheets
-- [1.0.0](#100)
+- [1.0.0](#100) • [1.0.1](#101)
   - [1.0.0-pre1](#100-pre1) • [1.0.0-pre2](#100-pre2) • [1.0.0-pre3](#100-pre3) • [1.0.0-pre4](#100-pre4)
   • [1.0.0-rc1](#100-rc1) • [1.0.0-rc2](#100-rc2) • [1.0.0-rc3](#100-rc3) • [1.0.0-rc4](#100-rc4) • [1.0.0-rc5](#100-rc5) • [1.0.0-rc6](#100-rc6) • [1.0.0](#100-release)
 - [0.6.0](#060) • [0.6.1](#061) • [0.6.2](#062) • [0.6.3](#063) • [0.6.4](#064) • [0.6.5](#065) • [0.6.6](#066) • [0.6.7](#067)
@@ -14,6 +14,18 @@ js: colouring
 - [0.3.0](#030) • [0.3.1](#031) • [0.3.2](#032) • [0.3.3](#033) • [0.3.4](#034) • [0.3.5](#035)
 - [0.2.0](#020) • [0.2.1](#021)
 - [0.1.0](#010) • [0.1.1](#011) • [0.1.2](#012)
+
+## 1.0.1
+*2021-07-03*
+- **Changes**
+  - [CLI] Revamped CLI usage, which now allows unprefixed command names (e.g., `novasheets help` can now be used instead of `novasheets --help`).
+- **Fixes**
+  - [Syntax] Fixed keywords `@var` and `@endvar` not being parsed properly when not separated from other content by newlines.
+  - [Syntax] Fixed superfluous whitespace being added to CSS output.
+  - [Syntax] Fixed parser option `DECIMAL_PLACES` not being applied to all applicable values.
+  - [Syntax] Fixed at-rules being prefixed with erroneous ampersands.
+  - [Scripting] Fixed custom options not being applied.
+  - [Functions] Fixed `@each` and `@repeat` not treating whitespace properly.
 
 ## 1.0.0
 *2021-06-19*
@@ -35,14 +47,12 @@ For the changes since the last release candidate, see the [1.0.0-release](#100-r
   - [Syntax] Removed parser constants `MAX_MATH_RECURSION` and `KEEP_NAN`.
   - [Syntax] Removed previous and parent selectors, `%` an `&`, as this usage is now accomplished by nesting.
   - [Syntax] Removed item slicer `<`.
-  - [Scripting] Removed `addFunction` option `nonest`.
 - **Changes**
   - [Syntax] Changed parser constant keyword from `@const` to `@option`.
   - [Syntax] Changed function names to be case insensitive.
   - [Syntax] Changed media query output to not condense duplicated queries as it sometimes broke output.
   - [CLI] Changed compilation to require using the `--compile`/`-c` flag.
   - [Scripting] Changed `compile` function to be asyncronous.
-  - [Scripting] Renamed `addFunction` option `notrim` to `trim` (inverting its usage) and `allargs` to `allArgs`.
   - [Functions] Changed math functions to return just their argument when invalid.
   - [Functions] Changed built-in color functions to no longer output console warnings for invalid colors.
 - **Fixes**
