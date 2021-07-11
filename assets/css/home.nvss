@@ -3,7 +3,7 @@ main {padding: 30px 0 0; overflow-x: hidden;}
 #showcase {
     h1 {margin: 0; font-size: 4em; letter-spacing: 4px;}
     h2 {margin: 0; font-size: 3em; letter-spacing: 2px;}
-    p {margin: 0; max-width: 600px; font-size: 1.5em;}
+    p {margin: auto; max-width: 700px; font-size: 1.5em;}
     #welcome-install {font-size: 1.5em;}
 }
 
@@ -19,15 +19,14 @@ main {padding: 30px 0 0; overflow-x: hidden;}
     }
 }
 
-@ ..800px {
+$(@beakpoint | 800px |
     #showcase h1 {font-size: 3.5em;}
     .item-container .item {
         padding: 1em;
         pre {margin: auto; max-width: 80%;}
     }
     .main-container .item {margin: auto; max-width: 90%;}
-}
-@ 800px.. {
+|
     #showcase h2 {margin-bottom: 0.5em;}
     .two-container {display: flex; gap: 10em;}
     .item-container .item {
@@ -35,7 +34,7 @@ main {padding: 30px 0 0; overflow-x: hidden;}
         p {padding-bottom: 1em;}
         &:not(.two-container) {width: 50vw;}
     }
-}
+)
 
 @var start = 185
 @var step = 20

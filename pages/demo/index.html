@@ -36,6 +36,7 @@ permalink: /demo/
             let parsedContent = parseNovaSheets(cssContent);
             $('#output').innerHTML = parsedContent.replace(/}(?!\s*$)/g, '}\n');
             parseNovaSheets();
+            $('head').innerHTML += `<style data-custom>${parsedContent}</style>`;
         }
         function toggleDefault() {
             useDefault = !useDefault;
@@ -44,10 +45,15 @@ permalink: /demo/
             parseInput();
         }
         document.addEventListener("DOMContentLoaded", function () {
-            let cleanInput = $('#input').innerHTML
-            .replace(/^\s*/gm,'')
-            .replace(/^\s*\n/, '')
+            let cleanInput = $('#input').innerHTML.replace(/^\s*/gm,'').replace(/^\s*\n/, '')
             $('#input').innerHTML = cleanInput;
+            $('#input').value = `
+                @var shading = linear-gradient($[1]deg, #55f, #5ff);
+                @var solid border = 1px solid $[color]
+                // body {color: blue;}
+                .shaded {background: $(shading|90); color: white;} // basic shading
+                .title {margin-left: 2em; color: #e55; border-bottom: $(solid border|color=#ff7711);}
+            `;
             parseInput();
         });
     </script>
@@ -61,13 +67,7 @@ permalink: /demo/
 
     <div id="input-wrapper">
         <h2>Input</h2>
-        <textarea id="input" onblur="parseInput()" type="novasheets">
-            @var shading = linear-gradient($[1]deg, #55f, #5ff);
-            @var solid border = 1px solid $[color]
-            // body {color: blue;}
-            .shaded {background: $(shading|90); color: white;} // basic shading
-            .title {margin-left: 2em; color: #e55; border-bottom: $(solid border|color=#ff7711);}
-        </textarea>
+        <textarea id="input" onblur="parseInput()" type="novasheets"></textarea>
         <br>
     </div>
 
