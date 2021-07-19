@@ -20,7 +20,5 @@ The following parser constants are available:
   - Controls how many decimal places numbers are outputted with. Has no effect when set to `false` (default).
 - `@option KEEP_UNPARSED <boolean>`
   - Controls whether or not undeclared variables should be kept in the output CSS; defaults to `false`.
-- `@option MAX_RECURSION <integer>`
-  - Controls how many times variable nesting etc will be iterated over; defaults to `50`.
 - `@option MAX_ARGUMENTS <integer>`
   - Controls the maximum number of arguments a variable can have; defaults to `10`.

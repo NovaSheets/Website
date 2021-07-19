@@ -18,6 +18,6 @@
     "devDependencies": {
         "@11ty/eleventy": "^0.12.1",
         "glob": "^7.1.7",
-        "novasheets": "1.0.2"
+        "novasheets": "1.0.3"
     }
 }
