@@ -1,6 +1,5 @@
+# General
 * text=auto
-
-package-lock.json -diff
 
 # Linguist
 src/**/*    linguist-generated -diff

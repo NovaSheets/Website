@@ -5,7 +5,7 @@ permalink: /changelog/
 js: colouring
 ---
 # Changelog for NovaSheets
-- [1.0.0](#100) • [1.0.1](#101) • [1.0.2](#102) • [1.0.3](#103)
+- [1.0.0](#100) • [1.0.1](#101) • [1.0.2](#102) • [1.0.3](#103) • [1.0.4](#104)
   - [1.0.0-pre1](#100-pre1) • [1.0.0-pre2](#100-pre2) • [1.0.0-pre3](#100-pre3) • [1.0.0-pre4](#100-pre4)
   • [1.0.0-rc1](#100-rc1) • [1.0.0-rc2](#100-rc2) • [1.0.0-rc3](#100-rc3) • [1.0.0-rc4](#100-rc4) • [1.0.0-rc5](#100-rc5) • [1.0.0-rc6](#100-rc6) • [1.0.0](#100-release)
 - [0.6.0](#060) • [0.6.1](#061) • [0.6.2](#062) • [0.6.3](#063) • [0.6.4](#064) • [0.6.5](#065) • [0.6.6](#066) • [0.6.7](#067)
@@ -14,6 +14,13 @@ js: colouring
 - [0.3.0](#030) • [0.3.1](#031) • [0.3.2](#032) • [0.3.3](#033) • [0.3.4](#034) • [0.3.5](#035)
 - [0.2.0](#020) • [0.2.1](#021)
 - [0.1.0](#010) • [0.1.1](#011) • [0.1.2](#012)
+
+## 1.0.4
+*2021-07-24*
+- **Fixes**
+  - [Syntax] Fixed multiple instances of block substitution of the same selector not being parsed.
+  - [Syntax] Fixed multiple substitutions of the same variable not being parsed together.
+  - [Syntax] Fixed parent element substitutions in child selectors of simple breakpoints not being trimmed properly.
 
 ## 1.0.3
 *2021-07-19*
