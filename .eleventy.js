@@ -5,7 +5,7 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy("CNAME");
 	eleventyConfig.addPassthroughCopy("_redirects");
-	eleventyConfig.addPassthroughCopy({ "pages/demo/example.nvss": "demo/example.nvss" });
+	eleventyConfig.addPassthroughCopy({ "pages/demo/": "demo/" });
 
 	eleventyConfig.addWatchTarget("assets");
 	eleventyConfig.addWatchTarget("pages");
