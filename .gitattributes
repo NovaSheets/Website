@@ -1,6 +1,2 @@
-# General
-* text=auto
-
 # Linguist
-src/**/*    linguist-generated -diff
 *.nvss      linguist-language=Less
