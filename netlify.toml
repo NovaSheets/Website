@@ -1,4 +1,0 @@
-[build]
-command = "npm run build" # from package.json
-environment = {NODE_VERSION = "14.16.1"} 
-publish = "_site/"

@@ -1,9 +1,0 @@
-When a new version is released:
-- Run build command in main repo
-- Move new files
-- Bump NovaSheets version
-- Update changelog
-- Update version.json
-- Update versions.ejs
-- Update redirects
-- Check website is not broken
